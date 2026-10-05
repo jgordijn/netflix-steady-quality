@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix: steady quality",
+  "version": "1.0",
+  "description": "Reports zero dropped frames to netflix.com so its quality adaptation doesn't downshift (and restart the decoder) on frame drops.",
+  "content_scripts": [{
+    "matches": ["https://*.netflix.com/*"],
+    "js": ["steady.js"],
+    "run_at": "document_start",
+    "all_frames": true,
+    "world": "MAIN"
+  }]
+}
